@@ -1,0 +1,28 @@
+PVM188
+
+This is my own implementation of Velleman's K188 1S - 60H PULSE-PAUSE TIMER software
+http://www.velleman.eu/products/view/?id=408232&country=be&lang=en
+
+Features
+
+wide timing range
+easy time setting
+start with 'pulse' or 'pause'
+'single shot' or 'loop'-selection
+applications:
+blinking of lights
+pulsed operation of buzzers
+automatic irrigation
+lawn sprinklers
+toilet flushing or ventilation
+battery charging time control
+cyclic operation of equipment
+Specifications
+
+power supply: 12-24 VDC
+relay contact: 16 A max.
+dimensions: 80 x 45 x 22 mm / 3.15 x 1.78 x 0.86"
+
+
+Velleman doesn't release the software of their kits. I needed to customize the software
+for my own application so I had to rewrite it.
