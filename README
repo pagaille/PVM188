@@ -3,6 +3,15 @@ PVM188
 This is my own implementation of Velleman's K188 1S - 60H PULSE-PAUSE TIMER software
 http://www.velleman.eu/products/view/?id=408232&country=be&lang=en
 
+NB / The original code had never worked; At the time I wrote it AI was an exotic concept
+and I lacked a debugger to understand what was wrong. Turns out my code was not bad at
+all but I inverted the Pause and Pulse in the GeneratePulse function call.
+There was also a bug in Delay1Sec (Tick != 2 instead of Tick < 2) that could create an
+infinite loop.
+
+Now Claude helped me fix the code... But I don't have the circuit anymore to test :) Please
+let me know if you manage to run it !
+
 Features
 
 wide timing range
