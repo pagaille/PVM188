@@ -139,7 +139,7 @@ void Delay1Sec(void)
 {
     Tick = 0;
     TMR1ON = 1; 
-    while (Tick != 2) {} // T = 0,5s
+    while (Tick < 2) {} // T = 0,5s
     TMR1ON = 0; 
 }
 
@@ -147,20 +147,20 @@ void DelayHMS(char Timeout,  struct sHMS *Unit) {
     char j;
     char k;
     
-    for (Timeout; Timeout != 0; Timeout--) {             // do "timeout" times...
+    for (; Timeout != 0; Timeout--) {             // do "timeout" times...
         if (Unit->sec) {
             Delay1Sec();
         }                                                 
         
         if (Unit->min) {
-            for (j=59; j!=0; j--) {
+            for (j=60; j!=0; j--) {
                 Delay1Sec();
             }
         }                          
         
         if (Unit->hour) {
-            for (j=59; j!=0; j--) {
-                for (k=59; k!=0; k--) {
+            for (j=60; j!=0; j--) {
+                for (k=60; k!=0; k--) {
                     Delay1Sec();
                 }
             }
@@ -169,8 +169,6 @@ void DelayHMS(char Timeout,  struct sHMS *Unit) {
 }
 
 void GeneratePulse(char PauseDuration, char PulseDuration) {
-    struct sHMS PauseUnit;
-    struct sHMS PulseUnit;
     
     PulseUnit.hour=!JmpPulseHour;
     PulseUnit.min=!JmpPulseMin;
@@ -201,9 +199,9 @@ char main(void)
 
     if (JmpLoop == 0)
         do{
-            GeneratePulse(GetPulse(), GetPause());
+            GeneratePulse(GetPause(), GetPulse());
         } while(1);
         else 
-            GeneratePulse(GetPulse(), GetPause());
+            GeneratePulse(GetPause(), GetPulse());
     SLEEP();
 }
