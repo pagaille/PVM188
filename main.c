@@ -99,7 +99,7 @@ void Init_PIC(void)
     T1CKPS1 = 1;   // bits 5-4  Prescaler Rate Select bits
     T1CKPS0 = 1;   // bit 4
     T1OSCEN = 0;   // bit 3 Timer1 Oscillator Enable Control bit 1 = off
-    nT1SYNC = 1;    // bit 2 Timer1 External Clock Input Synchronization Control bit...1 = Do not synchronize external clock input
+    T1SYNC = 1;    // bit 2 Timer1 External Clock Input Synchronization Control bit...1 = Do not synchronize external clock input
     TMR1CS = 0;    // bit 1 Timer1 Clock Source Select bit...0 = Internal clock (FOSC/4)
     TMR1H = 11;             // preset for timer1 MSB register
     TMR1L = 219;             // preset for timer1 LSB register
